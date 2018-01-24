@@ -91,7 +91,7 @@ export default {
     },
     getimage: con => {
       var s = con.slice(7);
-      return "https://shrouded-bayou-36071.herokuapp.com/" + s;
+      return "https://shrouded-bayou-36071.herokuapp.com" + s;
     },
 
     formatDate: function(date, format) {
