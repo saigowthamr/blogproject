@@ -85,7 +85,7 @@ export default {
       console.log(post)
 
       if(confirm('Are you sure')){
-       this.$http.delete('https://shrouded-bayou-36071.herokuapp.com/delete/'+post).then((data)=>{
+       this.$http.delete('https://murmuring-sands-13877.herokuapp.com/delete/'+post).then((data)=>{
         this.findPosts()
        
       }).catch(err=>{
@@ -113,7 +113,7 @@ export default {
      data.append('cimage',this.imageData)
     
 
-       this.$http.post('https://shrouded-bayou-36071.herokuapp.com/s',data).then((res)=>{
+       this.$http.post('https://murmuring-sands-13877.herokuapp.com/s',data).then((res)=>{
          //console.log(res)
          this.findPosts()
        }).catch(err=>{
@@ -124,7 +124,7 @@ export default {
     },
     getimage (con) {
     var s = con.slice(7)
-    return "https://shrouded-bayou-36071.herokuapp.com"+s
+    return "https://murmuring-sands-13877.herokuapp.com"+s
     },
       truncate:function(str,len){
           if(str.length > len  && str.length>0){
@@ -138,7 +138,7 @@ export default {
       },
 
     findPosts:function () {
-    this.$http.get('https://shrouded-bayou-36071.herokuapp.com').then(function (response) {
+    this.$http.get('https://murmuring-sands-13877.herokuapp.com').then(function (response) {
     
       this.posts = response.data
     })

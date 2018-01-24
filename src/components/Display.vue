@@ -17,7 +17,7 @@
           <img class="img-fluid rounded imgsingle3" :src="getimage(posts.cimage)" alt="image">
           <hr>
           <!-- Post Content -->
-          <p class="lead">{{posts.content}}</p>
+          <p class="lead" style="white-space:pre">{{posts.content}}</p>
           <hr>
         </div>
       </div>
@@ -83,15 +83,15 @@ export default {
   },
   methods: {
     findPost: function() {
-      let url = "https://shrouded-bayou-36071.herokuapp.com/post/" + this.$route.params.id;
+      let url = "https://murmuring-sands-13877.herokuapp.com/post/" + this.$route.params.id;
       this.$http.get(url).then(response => {
-        //console.log(response.data)
+        console.log(response.data)
         this.posts = response.data;
       });
     },
     getimage: con => {
       var s = con.slice(7);
-      return "https://shrouded-bayou-36071.herokuapp.com" + s;
+      return "https://murmuring-sands-13877.herokuapp.com" + s;
     },
 
     formatDate: function(date, format) {
@@ -99,7 +99,7 @@ export default {
     },
     getComments() {
       this.$http
-        .get("https://shrouded-bayou-36071.herokuapp.com/comments")
+        .get("https://murmuring-sands-13877.herokuapp.com/comments")
         .then(res => {
           this.comments = res.data;
         })
@@ -112,7 +112,7 @@ export default {
         comment: this.addComment
       };
       this.$http
-        .post("https://shrouded-bayou-36071.herokuapp.com/comments", comments)
+        .post("https://murmuring-sands-13877.herokuapp.com/comments", comments)
         .then(res => {
           this.addComment = "";
           this.getComments();
@@ -247,6 +247,10 @@ widget-area {
 }
 .status-upload form button > i {
   margin-right: 7px;
+}
+
+.contwi{
+  width: auto;
 }
 </style>
 
